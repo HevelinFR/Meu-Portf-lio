@@ -61,6 +61,7 @@
         float: right;
         margin-right: 5%;
         margin-left: auto;
+        position: relative;
     }
     
     .header ul li {
@@ -357,6 +358,11 @@
             z-index: 1;
             visibility: hidden;
         }
+        .header {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
         .header ul li a {
             border-bottom: 1px solid #FF7AAA;
             border-radius: 5px;
@@ -383,7 +389,7 @@
             -ms-flex-preferred-size: calc(100% - 20px);
         }
         .header .menu {
-            margin-top: 9vh;
+            margin-top: 8vh;
         }
     }
     
