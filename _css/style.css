@@ -39,6 +39,10 @@
         margin-left: 0;
     }
     
+    .header img {
+        max-width: 100%;
+    }
+    
     .header .img {
         width: 90px;
         margin-top: 5px;
@@ -75,6 +79,13 @@
     .header ul li a {
         text-decoration: none;
         color: #fff;
+        transition: .5s ease-in-out 0s;
+    }
+    
+    .header ul li a:hover {
+        background: #FF7AAA;
+        border-radius: 10px;
+        padding: 7px;
     }
     
     .checkbtn {
@@ -109,7 +120,7 @@
         display: flex;
     }
     
-    .social-media a {
+    .btn.black {
         text-decoration: none;
         background: #1e1e2a;
         color: #FFF;
@@ -120,6 +131,10 @@
         justify-content: center;
         transition: .5s ease-in-out 0s;
         margin-left: 10px;
+    }
+    
+    .btn.black:hover {
+        background: #FF7AAA;
     }
     
     .container {
@@ -133,6 +148,14 @@
     
     .flex {
         display: flex;
+    }
+    
+    .grid {
+        display: grid;
+    }
+    
+    .grid.center {
+        justify-content: center;
     }
     /* SOBRE MIM */
     
@@ -149,6 +172,7 @@
     
     .perfil .flex {
         justify-content: center;
+        flex-wrap: wrap;
     }
     
     .perfil .card-text {
@@ -178,6 +202,10 @@
         width: 100%;
     }
     
+    .grid.container-conhecimentos {
+        grid-template-columns: repeat(auto-fit, 200px);
+    }
+    
     .conhecimentos h2 {
         text-align: center;
         font-weight: 500;
@@ -194,7 +222,7 @@
         margin: 5px auto 20px;
     }
     
-    .conhecimentos .flex {
+    .conhecimentos .container-conhecimentos {
         justify-content: center;
         height: auto;
         flex-wrap: wrap;
@@ -233,6 +261,10 @@
         text-align: center;
     }
     
+    .container-projetos {
+        grid-template-columns: repeat(auto-fit, 33%);
+    }
+    
     .projetos .card-text h3 {
         text-align: center;
         font-weight: 400;
@@ -250,27 +282,26 @@
         background: #FF7AAA;
         margin-top: 10px;
         cursor: pointer;
+        transition: .5s ease-in-out 0s;
+    }
+    
+    .projetos .card-text button:hover {
+        background: #1e1e2a;
+        color: #fff;
     }
     
     .card-text .flex {
         justify-content: space-between;
     }
     
-    .projetos .flex {
+    .projetos .container-projetos {
         /* justify-content: center; */
         display: flex;
         height: auto;
         flex-wrap: wrap;
         margin: 25px 10px;
         height: auto;
-        flex-grow: 1;
-        flex-basis: calc(33% - 20px);
-        display: -webkit-box;
-        display: -ms-flexbox;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
         justify-content: space-between;
-        -ms-flex-wrap: wrap;
         text-align: left;
     }
     
