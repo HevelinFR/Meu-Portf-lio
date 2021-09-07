@@ -31,7 +31,7 @@
     
     .header-div {
         margin-top: 15%;
-        /* margin-left: 20%; */
+        margin-left: 20%;
     }
     
     .header-div h2 {
@@ -115,9 +115,41 @@
         margin-top: 5%;
     }
     
+    #img-01 {
+        -webkit-animation: MoveUpDown 2s linear infinite;
+        animation: MoveUpDown 2s linear infinite;
+        position: absolute;
+        left: 200px;
+        /* top: 0; */
+        /* z-index: 4; */
+        /* max-width: 550px; */
+        /* width: 100%; */
+    }
+    
+    @-webkit-keyframes MoveUpDown {
+        0%,
+        100% {
+            top: 0;
+        }
+        50% {
+            top: 10px;
+        }
+    }
+    
+    @keyframes MoveUpDown {
+        0%,
+        100% {
+            top: 0;
+        }
+        50% {
+            top: 10px;
+        }
+    }
+    
     .social-media {
-        margin-top: 1rem;
+        margin: 1rem auto auto;
         display: flex;
+        width: 75%;
     }
     
     .btn.black {
@@ -200,6 +232,7 @@
     section.conhecimentos {
         top: 70%;
         width: 100%;
+        padding-top: 70px;
     }
     
     .grid.container-conhecimentos {
@@ -343,6 +376,12 @@
         font-size: 2rem;
     }
     
+    @media screen and (max-width: 1215px) {
+        .header-div {
+            margin-left: 30%;
+        }
+    }
+    
     @media screen and (max-width: 1195px) {
         .projetos .card-container {
             width: 40%;
@@ -357,6 +396,7 @@
             width: 100%;
             text-align: center;
             margin-top: 20vh;
+            margin-left: 0;
         }
         .header-div .social-media {
             justify-content: center;
