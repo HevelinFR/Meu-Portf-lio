@@ -5,6 +5,7 @@
         color: #1e1e2a;
         overflow-x: hidden;
         text-decoration: none;
+        scroll-behavior: smooth;
     }
     /* HEADER */
     
@@ -12,8 +13,14 @@
         text-decoration: none;
     }
     
+    .main-container {
+        width: 90%;
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+    
     .header-container {
-        width: 100%;
+        width: 90%;
         background-color: #fff;
         justify-content: center;
         /* align-items: flex-start; */
@@ -283,11 +290,14 @@
     /* PROJETOS */
     
     .projetos .card-text {
+        height: 75%;
         width: 100%;
         color: #333;
-        text-align: justify;
         font-weight: 300;
         padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     
     .projetos h2 {
