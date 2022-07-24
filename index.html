@@ -26,12 +26,12 @@
     <div id="app">
         <header class="header-container">
             <div class="header">
-                <div class="main-container">
+                <div class="main-container flex-container">
                     
                     <img src="_img/logo-b.png">
                    
-                    <input type="checkbox" name="check" id="check">
-                    <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+                    <button @click="showMenu =! showMenu"><i class="fas fa-bars"></i></button>
+                   
                     <ul class="menu">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#conhecimentos">Conhecimentos</a></li>
@@ -40,6 +40,13 @@
                         <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
+                <ul class="menu-mobile" v-if="showMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#conhecimentos">Conhecimentos</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
             </div>
             <!--Header-->
 
@@ -212,15 +219,16 @@
     createApp({
       data() {
         return {
-          descricao: "Passe o cursor do mouse no card e saiba mais!",
-          message: {
-            "js": "JavaScript é uma linguagem leve, interpretada e baseada em objetos com funções de primeira classe, mais conhecida como a linguagem de script para páginas Web.",
-            "html":"HTML (Linguagem de Marcação de HiperTexto) é o bloco de construção mais básico da web. Define o significado e a estrutura do conteúdo da web.",
-            "css":"CSS é a linguagem que usamos para estilizar um documento HTML.",
-            "php":"PHP é uma linguagem de programação de ampla utilização, interpretada, que é especialmente interessante para desenvolvimento para a web e pode ser mesclada dentro do código HTML. A sintaxe da linguagem lembra C, Java e Perl, e é fácil de aprender. O objetivo principal da linguagem é permitir a desenvolvedores escreverem páginas que serão geradas dinamicamente rapidamente, mas você pode fazer muito mais do que isso com PHP.",
-            "laravel":"O Laravel é um framework de desenvolvimento ágil para PHP.",
-            "vue":"Vue é um framework JavaScript para construir interfaces de usuário. Ele se baseia em HTML, CSS e JavaScript padrão e fornece um modelo de programação declarativo e baseado em componentes que ajuda você a desenvolver interfaces de usuário com eficiência, sejam elas simples ou complexas."
-          }
+            showMenu: false,
+            descricao: "Passe o cursor do mouse no card e saiba mais!",
+            message: {
+                "js": "JavaScript é uma linguagem leve, interpretada e baseada em objetos com funções de primeira classe, mais conhecida como a linguagem de script para páginas Web.",
+                "html":"HTML (Linguagem de Marcação de HiperTexto) é o bloco de construção mais básico da web. Define o significado e a estrutura do conteúdo da web.",
+                "css":"CSS é a linguagem que usamos para estilizar um documento HTML.",
+                "php":"PHP é uma linguagem de programação de ampla utilização, interpretada, que é especialmente interessante para desenvolvimento para a web e pode ser mesclada dentro do código HTML. A sintaxe da linguagem lembra C, Java e Perl, e é fácil de aprender. O objetivo principal da linguagem é permitir a desenvolvedores escreverem páginas que serão geradas dinamicamente rapidamente, mas você pode fazer muito mais do que isso com PHP.",
+                "laravel":"O Laravel é um framework de desenvolvimento ágil para PHP.",
+                "vue":"Vue é um framework JavaScript para construir interfaces de usuário. Ele se baseia em HTML, CSS e JavaScript padrão e fornece um modelo de programação declarativo e baseado em componentes que ajuda você a desenvolver interfaces de usuário com eficiência, sejam elas simples ou complexas."
+            }
         }
       },
       methods: {

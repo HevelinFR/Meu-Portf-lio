@@ -45,7 +45,7 @@
     
     .header-div {
         margin-top: 15%;
-        margin-left: 20%;
+        margin-left: 35%;
         font-size: 25px;
     }
     
@@ -64,6 +64,9 @@
         margin-top: 10px;
         margin-bottom: 5px;
        
+    }
+    .header button{
+        display: none;
     }
     
 
@@ -436,14 +439,31 @@
         100%  { background-color: #ccc; }
       }
     @media screen and (max-width: 1215px) {
-        .header-div {
-            margin-left: 30%;
+
+        .header-div{
+            margin-left: auto;
         }
     }
     
     @media screen and (max-width: 1195px) {
         .projetos .card-container {
             width: 40%;
+        }
+
+        .conhecimentos .flex-container{
+            flex-direction: column;
+            text-align: center;
+        }
+        .descricao {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .conhecimentos .container-conhecimentos {
+            justify-content: center;
+        }
+        .article-title:after {
+           
+            margin: 5px auto 20px !important;
         }
     }
     
@@ -454,8 +474,7 @@
         .header-div {
             width: 100%;
             text-align: center;
-            margin-top: 20vh;
-            margin-left: 0;
+            margin: 10vh auto;
         }
         .header-div .social-media {
             justify-content: center;
@@ -482,15 +501,28 @@
         .projetos .flex {
             flex-basis: calc(50% - 20px);
         }
-        .header .menu {
+        .header .menu-mobile {
             position: absolute;
             width: 100%;
             background: #1e1e2a;
-            margin-top: 8.4vh;
+            margin-top: 61px;
             text-align: center;
             display: block;
             z-index: 1;
-            visibility: hidden;
+        
+        }
+        .header .flex-container{
+            justify-content: space-between;
+        }
+        .header button{
+            display: block;
+            background: none;
+            border: none;
+            color: #FFF;
+            font-size: 30px;
+        }
+        .header .menu{
+            display: none;
         }
         .header {
             display: flex;
@@ -501,19 +533,18 @@
             border-bottom: 1px solid #FF7AAA;
             border-radius: 5px;
         }
-        #check:checked~.menu {
-            visibility: visible;
-        }
-        #check:checked~ul li {
-            transition: 400ms ease-in-out 0s;
-        }
+       
         .checkbtn {
-            display: flex;
-            float: right;
             margin-left: auto;
             margin-top: 15px;
             font-size: 3rem;
             color: #FFF;
+        }
+
+        section.conhecimentos {
+            top: 70%;
+            width: 100%;
+            padding-top: 0px;
         }
     }
     
@@ -524,6 +555,11 @@
         }
         .header .menu {
             margin-top: 8vh;
+        }
+
+        .header-div {
+          
+            font-size: 18px;
         }
     }
     
