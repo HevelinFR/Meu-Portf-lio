@@ -7,10 +7,17 @@
         text-decoration: none;
         scroll-behavior: smooth;
     }
+    html {
+        scroll-behavior: smooth;
+    }
     /* HEADER */
     
     a {
         text-decoration: none;
+    }
+
+    .flex-container{
+        display: flex;
     }
     
     .main-container {
@@ -31,7 +38,7 @@
     }
     
     .header-container h2 {
-        padding: 0 10px;
+        /* padding: 0 10px; */
         color: #FFF;
         margin-left: 5%;
     }
@@ -39,28 +46,27 @@
     .header-div {
         margin-top: 15%;
         margin-left: 20%;
+        font-size: 25px;
     }
     
     .header-div h2 {
         color: #1e1e2a;
         margin-left: 0;
+        margin: 0;
     }
     
     .header img {
         max-width: 100%;
     }
     
-    .header .img {
-        width: 90px;
-        margin-top: 5px;
+    .header img {
+        
+        margin-top: 10px;
         margin-bottom: 5px;
-        padding-left: 70px;
+       
     }
     
-    .img img {
-        max-width: 100%;
-    }
-    
+
     .header {
         width: 100%;
         z-index: 1;
@@ -116,6 +122,10 @@
         text-transform: uppercase;
         letter-spacing: 4px;
     }
+
+    .header-div p{
+        margin: 10px 0;
+    }
     
     .img {
         max-width: 30%;
@@ -154,9 +164,9 @@
     }
     
     .social-media {
-        margin: 1rem auto auto;
+       
         display: flex;
-        width: 75%;
+        
     }
     
     .btn.black {
@@ -239,20 +249,37 @@
     section.conhecimentos {
         top: 70%;
         width: 100%;
-        padding-top: 70px;
+        padding-top: 230px;
+    }
+
+
+    .descricao{
+        width: 40%;
     }
     
     .grid.container-conhecimentos {
-        grid-template-columns: repeat(auto-fit, 200px);
+        grid-template-columns: repeat(auto-fit, 180px);
     }
     
-    .conhecimentos h2 {
-        text-align: center;
-        font-weight: 500;
-        padding: 50px 0;
+    
+
+    .article-title{
         text-transform: uppercase;
     }
+
+    .conhecimentos .article-title:after {
+        margin: 5px 0 20px;
     
+    }
+    .conhecimentos h2{
+        margin-top: 40px;
+    }
+
+    .descricao p{
+        font-size: 18px;
+        line-height: 23px;
+        
+    }
     .article-title:after {
         content: "";
         display: block;
@@ -263,7 +290,6 @@
     }
     
     .conhecimentos .container-conhecimentos {
-        justify-content: center;
         height: auto;
         flex-wrap: wrap;
         margin: 25px 10px;
@@ -280,12 +306,20 @@
         background-color: #1e1e2a;
         text-align: center;
         border-radius: 15%;
+        cursor: pointer;
     }
     
     .tecnologia i {
         font-size: 4rem;
-        color: #FF7AAA;
+        color: rgb(101, 99, 99);
         padding: 50px 20px;
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        transition: all 1s ease 0s, opacity 2s cubic-bezier(0.5, 0, 0, 1) 0s, transform 2s cubic-bezier(0.5, 0, 0, 1) 0s;
+
+    }
+
+    .tecnologia i:hover{
+        color: #FF7AAA;
     }
     /* PROJETOS */
     
@@ -385,7 +419,22 @@
         color: #fff;
         font-size: 2rem;
     }
-    
+
+    p span.cursor {
+        display: inline-block;
+        background-color: #ccc;
+        margin-left: 0.1rem;
+        width: 3px;
+        animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+        0%  { background-color: #ccc; }
+        49% { background-color: #ccc; }
+        50% { background-color: transparent; }
+        99% { background-color: transparent; }
+        100%  { background-color: #ccc; }
+      }
     @media screen and (max-width: 1215px) {
         .header-div {
             margin-left: 30%;

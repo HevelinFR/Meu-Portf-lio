@@ -7,19 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="_img/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="_img/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="_img/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="_img/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="_img/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="_img/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="_img/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="_img/favicon/apple-icon-152x152.png">
+    
     <link rel="apple-touch-icon" sizes="180x180" href="_img/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="_img/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="_img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="_img/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="_img/favicon/favicon-16x16.png">
+  
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
@@ -27,6 +18,7 @@
     <script src="https://kit.fontawesome.com/6e1a7a7c25.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="_css/normalize.css">
     <link rel="stylesheet" href="_css/style.css">
+    <script src="https://unpkg.com/vue@3"></script>
     <title>HfCode</title>
 </head>
 
@@ -34,25 +26,29 @@
     <div id="app">
         <header class="header-container">
             <div class="header">
-                <div class="img">
+                <div class="main-container">
+                    
                     <img src="_img/logo-b.png">
+                   
+                    <input type="checkbox" name="check" id="check">
+                    <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+                    <ul class="menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#conhecimentos">Conhecimentos</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
                 </div>
-                <input type="checkbox" name="check" id="check">
-                <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
-                <ul class="menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#conhecimentos">Conhecimentos</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
             </div>
             <!--Header-->
 
             <div class="flex">
                 <img src="_img/Saly-1.png" class="img" id="img-01">
                 <div class="header-div">
-                    <h2>Olá, me chamo Hevelin <br>sou Desenvolvedora Web</h2>
+                    <p>Olá!</p>
+                    <h2>Me chamo Hevelin</h2>
+                    <p>Desenvolvedora Web <span class="cursor">&nbsp;</span></p></p>
                     <div class="social-media">
                         <a class="btn black" href="https://www.linkedin.com/in/hevelin-freitas-6057b01b5/" target="_blank">Linkedin</a>
                         <a class="btn black" href="https://github.com/HevelinFR" target="_blank">Github</a>
@@ -62,32 +58,45 @@
 
         </header>
         <main>
-            <section class="conhecimentos" id="conhecimentos">
-                <h2 class="article-title">Conhecimentos</h2>
-                <div class="grid container-conhecimentos">
-                    <div class="tecnologia">
-                        <i class="fab fa-js"></i>
-                    </div>
+            <section class="conhecimentos main-container" id="conhecimentos">
+                
+                <div class="flex-container">
+                    <div class="grid container-conhecimentos">
+                        <div class="tecnologia" v-on:mouseover="descricao = message.js" v-on:mouseleave="mouseleave">
+                            <i class="fab fa-js"></i>
+                        </div>
+    
+                        <div class="tecnologia" v-on:mouseover="descricao = message.html" v-on:mouseleave="mouseleave">
+                            <i class="fab fa-html5"></i>
+                        </div>
+    
+                        <div class="tecnologia" v-on:mouseover="descricao = message.css" v-on:mouseleave="mouseleave">
+                            <i class="fab fa-css3"></i>
+                        </div>
 
-                    <div class="tecnologia">
-                        <i class="fab fa-html5"></i>
-                    </div>
+                        <div class="tecnologia" v-on:mouseover="descricao = message.vue" v-on:mouseleave="mouseleave">
+                            <i class="fab fa-vuejs"></i>
+                        </div>
+    
+                        <div class="tecnologia" v-on:mouseover="descricao = message.php" v-on:mouseleave="mouseleave">
+                            <i class="fab fa-php"></i>
+                        </div>
 
-                    <div class="tecnologia">
-                        <i class="fab fa-css3"></i>
-                    </div>
+                        <div class="tecnologia" v-on:mouseover="descricao = message.laravel" v-on:mouseleave="mouseleave">
+                            <i class="fab fa-laravel"></i>
+                        </div>
 
-                    <div class="tecnologia">
-                        <i class="fab fa-php"></i>
                     </div>
+    
+                    <div class="descricao">
+                        <h2 class="article-title">Conhecimentos</h2>
+                        <div class="modal-container">
+                            <p>{{descricao}}</p>
+                        </div>
+                    </div>
+    
                 </div>
-
-                <div class="modal">
-                    <div class="modal-container">
-
-                    </div>
-                </div>
-
+               
             </section>
 
 
@@ -164,20 +173,21 @@
 
                     </div>
                     <!--div card-container-->
-                </div>
+                
 
-                <div class="card-container">
+                    <div class="card-container">
 
-                    <div class="card-text">
-                        <h3>Techno</h3>
-                        <p>Loja virtual feita com Vue.js no curso da Origamid</p>
-                        <div class="flex">
-                            <a class="btn pink" href="https://techno.vercel.app/" target="_blank"><button>website</button></a>
-                            <a class="btn pink" href="https://github.com/HevelinFR/Techno" target="_blank"><button>Código</button></a>
+                        <div class="card-text">
+                            <h3>Techno</h3>
+                            <p>Loja virtual feita com Vue.js no curso da Origamid</p>
+                            <div class="flex">
+                                <a class="btn pink" href="https://techno.vercel.app/" target="_blank"><button>website</button></a>
+                                <a class="btn pink" href="https://github.com/HevelinFR/Techno" target="_blank"><button>Código</button></a>
+                            </div>
                         </div>
-                    </div>
-                    <!--div card-text-->
+                        <!--div card-text-->
 
+                    </div>
                 </div>
                 <!--div card-container-->
     </div>
@@ -189,19 +199,36 @@
         <div class="contato">
             <p> hevelinfreitas21@gmail.com</p>
             <p><a href=""><i class="fab fa-github"></i></a> <a href=""><i class="fab fa-linkedin"></i></a> <a href=""><i class="fab fa-instagram"></i></a></p>
-            © Copyright Hevelin Freitas 2021
+            © Copyright Hevelin Freitas 2022
         </div>
     </footer>
     </div>
-    <script>
-        const vm = new Vue({
-            el: "#app",
-            data: {
-                conhecimentos: [],
-            }
-        })
-    </script>
+
 
 </body>
+<script>
+    const { createApp } = Vue
+  
+    createApp({
+      data() {
+        return {
+          descricao: "Passe o cursor do mouse no card e saiba mais!",
+          message: {
+            "js": "JavaScript é uma linguagem leve, interpretada e baseada em objetos com funções de primeira classe, mais conhecida como a linguagem de script para páginas Web.",
+            "html":"HTML (Linguagem de Marcação de HiperTexto) é o bloco de construção mais básico da web. Define o significado e a estrutura do conteúdo da web.",
+            "css":"CSS é a linguagem que usamos para estilizar um documento HTML.",
+            "php":"PHP é uma linguagem de programação de ampla utilização, interpretada, que é especialmente interessante para desenvolvimento para a web e pode ser mesclada dentro do código HTML. A sintaxe da linguagem lembra C, Java e Perl, e é fácil de aprender. O objetivo principal da linguagem é permitir a desenvolvedores escreverem páginas que serão geradas dinamicamente rapidamente, mas você pode fazer muito mais do que isso com PHP.",
+            "laravel":"O Laravel é um framework de desenvolvimento ágil para PHP.",
+            "vue":"Vue é um framework JavaScript para construir interfaces de usuário. Ele se baseia em HTML, CSS e JavaScript padrão e fornece um modelo de programação declarativo e baseado em componentes que ajuda você a desenvolver interfaces de usuário com eficiência, sejam elas simples ou complexas."
+          }
+        }
+      },
+      methods: {
+        mouseleave: function(){
+        this.descricao = 'Passe o cursor do mouse no card e saiba mais!'
+        }
+    }
+    }).mount('#app')
+  </script>
 
 </html>
