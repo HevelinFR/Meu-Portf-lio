@@ -18,21 +18,37 @@
     <script src="https://kit.fontawesome.com/6e1a7a7c25.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="_css/normalize.css">
     <link rel="stylesheet" href="_css/style.css">
+    <link rel="stylesheet" href="_css/dark.css">
     <script src="https://unpkg.com/vue@3"></script>
     <title>HfCode</title>
 </head>
 
 <body>
     <div id="app">
-        <header class="header-container">
-            <div class="header">
-                <div class="main-container flex-container">
+        <div :class="dark ? 'dark' : ''">
+            <header class="header-container">
+                <div class="header">
+                    <div class="main-container flex-container">
+                        
+                        <img src="_img/logo-b.png">
                     
-                    <img src="_img/logo-b.png">
-                   
-                    <button @click="showMenu =! showMenu"><i class="fas fa-bars"></i></button>
-                   
-                    <ul class="menu">
+                        <button @click="showMenu =! showMenu"><i class="fas fa-bars"></i></button>
+                    
+                        <ul class="menu">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#conhecimentos">Conhecimentos</a></li>
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#projetos">Projetos</a></li>
+                            <li><a href="#contato">Contato</a></li>
+                            <li>
+                                <div class="switch__container">
+                                    <input id="switch-shadow" class="switch switch--shadow" type="checkbox" v-model="dark">
+                                    <label for="switch-shadow"></label>
+                                  </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="menu-mobile" v-if="showMenu">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#conhecimentos">Conhecimentos</a></li>
                         <li><a href="#sobre">Sobre</a></li>
@@ -40,175 +56,168 @@
                         <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
-                <ul class="menu-mobile" v-if="showMenu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#conhecimentos">Conhecimentos</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </div>
-            <!--Header-->
+                <!--Header-->
 
-            <div class="flex">
-                <img src="_img/Saly-1.png" class="img" id="img-01">
-                <div class="header-div">
-                    <p>Olá!</p>
-                    <h2>Me chamo Hevelin</h2>
-                    <p>Desenvolvedora Web <span class="cursor">&nbsp;</span></p></p>
-                    <div class="social-media">
-                        <a class="btn black" href="https://www.linkedin.com/in/hevelin-freitas-6057b01b5/" target="_blank">Linkedin</a>
-                        <a class="btn black" href="https://github.com/HevelinFR" target="_blank">Github</a>
-                    </div>
-                </div>
-            </div>
-
-        </header>
-        <main>
-            <section class="conhecimentos main-container" id="conhecimentos">
-                
-                <div class="flex-container">
-                    <div class="grid container-conhecimentos">
-                        <div class="tecnologia" v-on:mouseover="descricao = message.js" v-on:mouseleave="mouseleave">
-                            <i class="fab fa-js"></i>
-                        </div>
-    
-                        <div class="tecnologia" v-on:mouseover="descricao = message.html" v-on:mouseleave="mouseleave">
-                            <i class="fab fa-html5"></i>
-                        </div>
-    
-                        <div class="tecnologia" v-on:mouseover="descricao = message.css" v-on:mouseleave="mouseleave">
-                            <i class="fab fa-css3"></i>
-                        </div>
-
-                        <div class="tecnologia" v-on:mouseover="descricao = message.vue" v-on:mouseleave="mouseleave">
-                            <i class="fab fa-vuejs"></i>
-                        </div>
-    
-                        <div class="tecnologia" v-on:mouseover="descricao = message.php" v-on:mouseleave="mouseleave">
-                            <i class="fab fa-php"></i>
-                        </div>
-
-                        <div class="tecnologia" v-on:mouseover="descricao = message.laravel" v-on:mouseleave="mouseleave">
-                            <i class="fab fa-laravel"></i>
-                        </div>
-
-                    </div>
-    
-                    <div class="descricao">
-                        <h2 class="article-title">Conhecimentos</h2>
-                        <div class="modal-container">
-                            <p>{{descricao}}</p>
-                        </div>
-                    </div>
-    
-                </div>
-               
-            </section>
-
-
-            <section class="perfil" id="sobre">
                 <div class="flex">
-                    <div class="foto">
-                        <img src="_img/Hevelin.jpg">
-                    </div>
-                    <div class="card-text">
-                        <p> Me chamo Hevelin, tenho 21 anos sou estudante de Análise e Desenvolvimento de Sistemas no Instituto Federal da Bahia, atualmente estou cursando o 4 semestre.</p>
-
-                        <p>Comecei a programar com 17 anos, e em 2020 comecei a dedicar meus estudos a aréa de desenvolvimento web. Atualmente trabalho na empresa Postali Marketing Digital como Programadora JR.
-                        </p>
+                    <img src="_img/Saly-1.png" class="img" id="img-01">
+                    <div class="header-div">
+                        <p>Olá!</p>
+                        <h2>Me chamo Hevelin</h2>
+                        <p>Desenvolvedora Web <span class="cursor">&nbsp;</span></p></p>
+                        <div class="social-media">
+                            <a class="btn black" href="https://www.linkedin.com/in/hevelin-freitas-6057b01b5/" target="_blank">Linkedin</a>
+                            <a class="btn black" href="https://github.com/HevelinFR" target="_blank">Github</a>
+                        </div>
                     </div>
                 </div>
-            </section>
 
+            </header>
+            <main>
+                <section class="conhecimentos main-container" id="conhecimentos">
+                    
+                    <div class="flex-container">
+                        <div class="grid container-conhecimentos">
+                            <div class="tecnologia" v-on:mouseover="descricao = message.js" v-on:mouseleave="mouseleave">
+                                <i class="fab fa-js"></i>
+                            </div>
+        
+                            <div class="tecnologia" v-on:mouseover="descricao = message.html" v-on:mouseleave="mouseleave">
+                                <i class="fab fa-html5"></i>
+                            </div>
+        
+                            <div class="tecnologia" v-on:mouseover="descricao = message.css" v-on:mouseleave="mouseleave">
+                                <i class="fab fa-css3"></i>
+                            </div>
 
-            <section class="projetos main-container" id="projetos">
-                <h2 class="article-title">Projetos</h2>
-                <div class="grid container-projetos">
+                            <div class="tecnologia" v-on:mouseover="descricao = message.vue" v-on:mouseleave="mouseleave">
+                                <i class="fab fa-vuejs"></i>
+                            </div>
+        
+                            <div class="tecnologia" v-on:mouseover="descricao = message.php" v-on:mouseleave="mouseleave">
+                                <i class="fab fa-php"></i>
+                            </div>
 
-                    <div class="card-container">
-                        <div class="card-text">
-                            <h3>Site Alumiar</h3>
-                            Site que desenvolvi para uma empresa de Marketing Digital
-                            <div class="flex">
-                                <a class="btn pink" href="https://alumiar.vercel.app/" target="_blank"><button>website</button></a>
-                                <a class="btn pink" href="https://github.com/HevelinFR/Alumiar" target="_blank"><button>Código</button></a>
+                            <div class="tecnologia" v-on:mouseover="descricao = message.laravel" v-on:mouseleave="mouseleave">
+                                <i class="fab fa-laravel"></i>
+                            </div>
+
+                        </div>
+        
+                        <div class="descricao">
+                            <h2 class="article-title">Conhecimentos</h2>
+                            <div class="modal-container">
+                                <p>{{descricao}}</p>
                             </div>
                         </div>
-                        <!--div card-text-->
-
+        
                     </div>
-                    <!--div card-container-->
-
-                    <div class="card-container">
-                        <div class="card-text">
-                            <h3>Bikcraft</h3>
-                            Site desenvolvido no curso de Web Design na Origamid
-                            <div class="flex">
-                                <a class="btn pink" href="https://github.com/HevelinFR/Projeto-curso-de-Web-Design-da-origamid" target="_blank"><button>Código</button></a>
-                            </div>
-                        </div>
-                        <!--div card-text-->
-
-                    </div>
-                    <!--div card-container-->
-
-                    <div class="card-container">
-
-                        <div class="card-text">
-                            <h3>Sistema de Cadastro de clientes</h3>
-                            <p>Projeto pessoal criado com objetivo de praticar a linguagem PHP e banco de dados Mysql.</p>
-                            <div class="flex">
-                                <a class="btn pink" href="https://github.com/HevelinFR/CRUD-cadastro-de-clientes" target="_blank"><button>Código</button></a>
-                            </div>
-                        </div>
-                        <!--div card-text-->
-
-                    </div>
-                    <!--div card-container-->
-
-                    <div class="card-container">
-
-                        <div class="card-text">
-                            <h3>Summer</h3>
-                            <p>Projeto de conclusão da disciplina de linguagem de programação. Summer é um sistema de gerenciamento de biblioteca desenvolvido em Python3.</p>
-                            <div class="flex">
-                                <a class="btn pink" href="https://github.com/HevelinFR/sumer" target="_blank"><button>Código</button></a>
-                            </div>
-                        </div>
-                        <!--div card-text-->
-
-                    </div>
-                    <!--div card-container-->
                 
+                </section>
 
-                    <div class="card-container">
 
-                        <div class="card-text">
-                            <h3>Techno</h3>
-                            <p>Loja virtual feita com Vue.js no curso da Origamid</p>
-                            <div class="flex">
-                                <a class="btn pink" href="https://techno.vercel.app/" target="_blank"><button>website</button></a>
-                                <a class="btn pink" href="https://github.com/HevelinFR/Techno" target="_blank"><button>Código</button></a>
-                            </div>
+                <section class="perfil" id="sobre">
+                    <div class="flex">
+                        <div class="foto">
+                            <img src="_img/Hevelin.jpg">
                         </div>
-                        <!--div card-text-->
+                        <div class="card-text">
+                            <p> Me chamo Hevelin, tenho 21 anos sou estudante de Análise e Desenvolvimento de Sistemas no Instituto Federal da Bahia, atualmente estou cursando o 4 semestre.</p>
 
+                            <p>Comecei a programar com 17 anos, e em 2020 comecei a dedicar meus estudos a aréa de desenvolvimento web. Atualmente trabalho na empresa Postali Marketing Digital como Programadora JR.
+                            </p>
+                        </div>
                     </div>
+                </section>
+
+
+                <section class="projetos main-container" id="projetos">
+                    <h2 class="article-title">Projetos</h2>
+                    <div class="grid container-projetos">
+
+                        <div class="card-container">
+                            <div class="card-text">
+                                <h3>Site Alumiar</h3>
+                                Site que desenvolvi para uma empresa de Marketing Digital
+                                <div class="flex">
+                                    <a class="btn pink" href="https://alumiar.vercel.app/" target="_blank"><button>website</button></a>
+                                    <a class="btn pink" href="https://github.com/HevelinFR/Alumiar" target="_blank"><button>Código</button></a>
+                                </div>
+                            </div>
+                            <!--div card-text-->
+
+                        </div>
+                        <!--div card-container-->
+
+                        <div class="card-container">
+                            <div class="card-text">
+                                <h3>Bikcraft</h3>
+                                Site desenvolvido no curso de Web Design na Origamid
+                                <div class="flex">
+                                    <a class="btn pink" href="https://github.com/HevelinFR/Projeto-curso-de-Web-Design-da-origamid" target="_blank"><button>Código</button></a>
+                                </div>
+                            </div>
+                            <!--div card-text-->
+
+                        </div>
+                        <!--div card-container-->
+
+                        <div class="card-container">
+
+                            <div class="card-text">
+                                <h3>Sistema de Cadastro de clientes</h3>
+                                <p>Projeto pessoal criado com objetivo de praticar a linguagem PHP e banco de dados Mysql.</p>
+                                <div class="flex">
+                                    <a class="btn pink" href="https://github.com/HevelinFR/CRUD-cadastro-de-clientes" target="_blank"><button>Código</button></a>
+                                </div>
+                            </div>
+                            <!--div card-text-->
+
+                        </div>
+                        <!--div card-container-->
+
+                        <div class="card-container">
+
+                            <div class="card-text">
+                                <h3>Summer</h3>
+                                <p>Projeto de conclusão da disciplina de linguagem de programação. Summer é um sistema de gerenciamento de biblioteca desenvolvido em Python3.</p>
+                                <div class="flex">
+                                    <a class="btn pink" href="https://github.com/HevelinFR/sumer" target="_blank"><button>Código</button></a>
+                                </div>
+                            </div>
+                            <!--div card-text-->
+
+                        </div>
+                        <!--div card-container-->
+                    
+
+                        <div class="card-container">
+
+                            <div class="card-text">
+                                <h3>Techno</h3>
+                                <p>Loja virtual feita com Vue.js no curso da Origamid</p>
+                                <div class="flex">
+                                    <a class="btn pink" href="https://techno.vercel.app/" target="_blank"><button>website</button></a>
+                                    <a class="btn pink" href="https://github.com/HevelinFR/Techno" target="_blank"><button>Código</button></a>
+                                </div>
+                            </div>
+                            <!--div card-text-->
+
+                        </div>
+                    </div>
+                    <!--div card-container-->
+
+                </section>
+
+
+            </main>
+            <footer class="footer" id="contato">
+                <div class="contato">
+                    <p> hevelinfreitas21@gmail.com</p>
+                    <p><a href=""><i class="fab fa-github"></i></a> <a href=""><i class="fab fa-linkedin"></i></a> <a href=""><i class="fab fa-instagram"></i></a></p>
+                    © Copyright Hevelin Freitas 2022
                 </div>
-                <!--div card-container-->
-    </div>
-    </section>
-
-
-    </main>
-    <footer class="footer" id="contato">
-        <div class="contato">
-            <p> hevelinfreitas21@gmail.com</p>
-            <p><a href=""><i class="fab fa-github"></i></a> <a href=""><i class="fab fa-linkedin"></i></a> <a href=""><i class="fab fa-instagram"></i></a></p>
-            © Copyright Hevelin Freitas 2022
+            </footer>
         </div>
-    </footer>
     </div>
 
 
@@ -219,6 +228,7 @@
     createApp({
       data() {
         return {
+            dark: true,
             showMenu: false,
             descricao: "Passe o cursor do mouse no card e saiba mais!",
             message: {
