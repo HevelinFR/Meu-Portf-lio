@@ -1,11 +1,24 @@
-body, ul, li{
+body, ul, li, h2, h1, h3{
     padding: 0;
     margin: 0;
 }
+p{
+    font-size: 1rem;
+    color: #9ca3af;
+    line-height: 160%;
+    font-weight: 300;
+}
+
+h2{
+    font-size: 1rem;
+    line-height: 160%;
+    font-weight: 500;
+}
 
 body{
-    background-color: #1e1e2a;
+    background-color: #080713;
     color: #fff;
+   font-family: "Archivo"
 }
 .container{
     width: 95%;
@@ -16,6 +29,7 @@ body{
 .flex{
     display: flex;
 }
+
 
 .gap-16{
     gap: 16px;
@@ -28,4 +42,30 @@ body{
 
 .resume-conatiner{
     margin: 60px 0;
+    height: 100%;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+#info-container{
+    background-color: #1e1e2a;
+    padding: 32px;
+    border-radius: 8px;
+}
+
+header{
+    width: auto;
+    border-radius: 8px 8px 0 0;
+    background-color: #1e1e2a;
+    padding: 16px;
+   
+}
+
+#image-me{
+    border-radius: 100%;
+}
+
+.resume-me{
+    align-items: center;
+    margin: 16px 0;
 }
