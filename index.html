@@ -11,16 +11,19 @@
 
     <!-- SEO Meta Tags -->
     <meta name="author" content="Hevelin Freitas">
-	<meta name="description" content="Desenvolvimento de website de alta performance, focado na experiencia do usuário com interface modernas e responsividade." />
-	<meta name="keywords" content="JavaScript, Front-end, vue.js, Hevelin, Hevelin Freitas, css, html, php, sites, desenvolvimento, programador, freelancer, hevelin,  portfólio, website" />
-	<meta name="title" content="Hevelin Freitas - Portfólio" />
+    <meta name="description"
+        content="Desenvolvimento de website de alta performance, focado na experiencia do usuário com interface modernas e responsividade." />
+    <meta name="keywords"
+        content="JavaScript, Front-end, vue.js, Hevelin, Hevelin Freitas, css, html, php, sites, desenvolvimento, programador, freelancer, hevelin,  portfólio, website" />
+    <meta name="title" content="Hevelin Freitas - Portfólio" />
 
-	<!-- Meta OG Tags for Social Media -->
-	<meta property="og:type" content="website">
-	<meta property="og:image" content="">
-	<meta property="og:title" content="Hevelin Freitas - Portfólio">
-	<meta property="og:description" content="Desenvolvimento de website de alta performance, focado na experiencia do usuário com interface modernas e responsividade.">
-    
+    <!-- Meta OG Tags for Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="">
+    <meta property="og:title" content="Hevelin Freitas - Portfólio">
+    <meta property="og:description"
+        content="Desenvolvimento de website de alta performance, focado na experiencia do usuário com interface modernas e responsividade.">
+
 
     <script src="https://kit.fontawesome.com/6e1a7a7c25.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="_css/normalize.css">
@@ -36,23 +39,24 @@
             <header class="header-container">
                 <div class="header">
                     <div class="main-container flex-container">
-                        
+
                         <img src="_img/logo-b.png">
-                    
+
                         <button @click="showMenu =! showMenu"><i class="fas fa-bars"></i></button>
-                    
+
                         <ul class="menu">
                             <li><a href="#home">Home</a></li>
                             <li><a href="#conhecimentos">Conhecimentos</a></li>
                             <li><a href="#sobre">Sobre</a></li>
                             <li><a href="#projetos">Projetos</a></li>
                             <li><a href="#contato">Contato</a></li>
-                            <li>
+                            <!-- <li>
                                 <div class="switch__container">
-                                    <input id="switch-shadow" class="switch switch--shadow" type="checkbox" v-model="dark">
+                                    <input id="switch-shadow" class="switch switch--shadow" type="checkbox"
+                                        v-model="dark">
                                     <label for="switch-shadow"></label>
-                                  </div>
-                            </li>
+                                </div>
+                            </li> -->
                         </ul>
                     </div>
                     <ul class="menu-mobile" v-if="showMenu">
@@ -70,160 +74,229 @@
                     <div class="header-div">
                         <p>Olá!</p>
                         <h2>Me chamo Hevelin</h2>
-                        <p>Desenvolvedora Web <span class="cursor">&nbsp;</span></p></p>
+                        <p>Desenvolvedora Fullstack <span class="cursor">&nbsp;</span></p>
+                        </p>
+                        <div class="badges">
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                            <span>JavaScript</span>
+                            <span>TypeScript</span>
+                            <span>React</span>
+                            <span>Vue.js</span>
+                            <span>MySQL</span>
+                            <span>Docker</span>
+                        </div>
                         <div class="social-media">
-                            <a class="btn black" href="https://www.linkedin.com/in/hevelin-freitas-6057b01b5/" target="_blank">Linkedin</a>
-                            <a class="btn black" href="https://github.com/HevelinFR" target="_blank">Github</a>
+                            <a class="btn" href="https://www.linkedin.com/in/hevelin-freitas-6057b01b5/"
+                                target="_blank">Linkedin</a>
+                            <a class="btn" href="https://github.com/HevelinFR" target="_blank">Github</a>
+                            <a class="btn" href="https://lattes.cnpq.br/6884591347410417" target="_blank">Lattes</a>
                         </div>
                     </div>
                 </div>
 
             </header>
             <main>
-                <section class="conhecimentos main-container" id="conhecimentos">
-                    
+                <section class="sobre-profissional main-container" id="experiencia">
+
                     <div class="flex-container">
-                        <div class="grid container-conhecimentos">
-                            <div class="tecnologia" v-on:mouseover="descricao = message.js" v-on:mouseleave="mouseleave">
-                                <i class="fab fa-js"></i>
-                            </div>
-        
-                            <div class="tecnologia" v-on:mouseover="descricao = message.html" v-on:mouseleave="mouseleave">
-                                <i class="fab fa-html5"></i>
-                            </div>
-        
-                            <div class="tecnologia" v-on:mouseover="descricao = message.css" v-on:mouseleave="mouseleave">
-                                <i class="fab fa-css3"></i>
+
+                        <!-- EXPERIÊNCIA -->
+                        <div class="bloco">
+                            <h2 class="titulo">Experiência</h2>
+
+                            <div class="item">
+                                <h3>Desenvolvedora de Software</h3>
+                                <span>Medme Saúde • 2024 - Atual</span>
+                                <p>
+                                    Desenvolvimento e manutenção de APIs REST com Laravel, melhorias em sistemas
+                                    existentes e criação de interfaces com React e TypeScript.
+                                </p>
                             </div>
 
-                            <div class="tecnologia" v-on:mouseover="descricao = message.vue" v-on:mouseleave="mouseleave">
-                                <i class="fab fa-vuejs"></i>
-                            </div>
-        
-                            <div class="tecnologia" v-on:mouseover="descricao = message.php" v-on:mouseleave="mouseleave">
-                                <i class="fab fa-php"></i>
-                            </div>
-
-                            <div class="tecnologia" v-on:mouseover="descricao = message.laravel" v-on:mouseleave="mouseleave">
-                                <i class="fab fa-laravel"></i>
-                            </div>
-
-                        </div>
-        
-                        <div class="descricao">
-                            <h2 class="article-title">Conhecimentos</h2>
-                            <div class="modal-container">
-                                <p>{{descricao}}</p>
+                            <div class="item">
+                                <h3>Desenvolvedora Fullstack</h3>
+                                <span>Postali • 2021 - 2024</span>
+                                <p>
+                                    Desenvolvimento de e-commerce, integrações com ERP e implementação de
+                                    funcionalidades de pagamento e logística.
+                                </p>
                             </div>
                         </div>
-        
+
+                        <!-- FORMAÇÃO -->
+                        <div class="bloco">
+                            <h2 class="titulo">Formação</h2>
+
+                            <div class="item">
+                                <h3>Mestrado em Ciência da Computação</h3>
+                                <span>UFBA • 2025 - Atual</span>
+                                <p>
+                                    Pesquisa com foco em sistemas distribuídos e privacidade (aprendizado federado).
+                                </p>
+                            </div>
+
+                            <div class="item">
+                                <h3>Análise e Desenvolvimento de Sistemas</h3>
+                                <span>IFBA • 2019 - 2023</span>
+                            </div>
+                        </div>
+
                     </div>
-                
+
+
+                    <!-- <div class="tecnologias">
+                        <h2 class="titulo">Tecnologias</h2>
+
+                        <div class="grid">
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                            <span>JavaScript</span>
+                            <span>TypeScript</span>
+                            <span>Vue.js</span>
+                            <span>React</span>
+                            <span>MySQL</span>
+                            <span>Docker</span>
+                        </div>
+                    </div> -->
+
                 </section>
 
 
-                <section class="perfil" id="sobre">
-                    <div class="flex">
-                        <div class="foto">
-                            <img src="_img/Hevelin.jpg">
-                        </div>
-                        <div class="card-text">
-                            <p> Me chamo Hevelin, tenho 21 anos sou estudante de Análise e Desenvolvimento de Sistemas no Instituto Federal da Bahia, atualmente estou cursando o 6 semestre.</p>
+                <section class="perfil main-container" id="sobre">
 
-                            <p>Comecei a programar com 17 anos, e em 2020 comecei a dedicar meus estudos a aréa de desenvolvimento web. Atualmente trabalho na empresa Postali Marketing Digital como Programadora JR.
+                    <div class="flex g-16 ">
+                        <div class="foto ">
+                            <img src="_img/me.jpeg">
+                        </div>
+                        <div class="card-text bloco">
+                            <p>
+                                Desenvolvedora fullstack formada em Análise e Desenvolvimento
+                                de
+                                Sistemas pelo IFBA e atualmente mestranda em Ciência da Computação pela UFBA.
                             </p>
+
+                            <p>
+                                Atuo profissionalmente com desenvolvimento web desde 2021, com experiência na
+                                construção
+                                e manutenção de sistemas e e-commerce, utilizando principalmente PHP (Laravel),
+                                JavaScript, TypeScript, Vue.js e React.
+                            </p>
+
                         </div>
                     </div>
+
+
                 </section>
 
 
                 <section class="projetos main-container" id="projetos">
-                    <h2 class="article-title">Projetos</h2>
+
+                    <h2 class="titulo">Projetos</h2>
+
+                    <p class="subtitulo">
+                        Projetos desenvolvidos com foco em aprendizado, prática de tecnologias 
+                    </p>
+
                     <div class="grid container-projetos">
 
+                        <!-- 1. Projeto Profissional -->
                         <div class="card-container">
                             <div class="card-text">
-                                <h3>Site Alumiar</h3>
-                                Site que desenvolvi para uma empresa de Marketing Digital
+                                <h3>Site Alumiar </h3>
+                                <p>
+                                    Projeto desenvolvido para uma empresa de marketing digital, com foco em apresentação
+                                    institucional e experiência do usuário.
+                                </p>
                                 <div class="flex">
-                                    <a class="btn pink" href="https://alumiar.vercel.app/" target="_blank"><button>website</button></a>
-                                    <a class="btn pink" href="https://github.com/HevelinFR/Alumiar" target="_blank"><button>Código</button></a>
+                                    <a class="btn" href="https://alumiar.vercel.app/" target="_blank">Website</a>
+                                    <a class="btn" href="https://github.com/HevelinFR/Alumiar"
+                                        target="_blank">Código</a>
                                 </div>
                             </div>
-                            <!--div card-text-->
-
                         </div>
-                        <!--div card-container-->
 
+                        <!-- 2. Backend / CRUD -->
+                        <div class="card-container">
+                            <div class="card-text">
+                                <h3>Sistema de Cadastro de Clientes </h3>
+                                <p>
+                                    Sistema CRUD desenvolvido em PHP e MySQL, com funcionalidades de cadastro, edição e
+                                    remoção de dados.
+                                </p>
+                                <div class="flex">
+                                    <a class="btn" href="https://github.com/HevelinFR/CRUD-cadastro-de-clientes"
+                                        target="_blank">Código</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. E-commerce Vue -->
+                        <div class="card-container">
+                            <div class="card-text">
+                                <h3>Techno </h3>
+                                <p>
+                                    Aplicação de e-commerce desenvolvida com Vue.js, com foco em componentização e
+                                    organização de dados.
+                                </p>
+                                <div class="flex">
+                                    <a class="btn" href="https://techno.vercel.app/" target="_blank">Website</a>
+                                    <a class="btn" href="https://github.com/HevelinFR/Techno" target="_blank">Código</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Python -->
+                        <div class="card-container">
+                            <div class="card-text">
+                                <h3>Summer - Sistema de Biblioteca </h3>
+                                <p>
+                                    Sistema desenvolvido em Python com foco em lógica de programação e gerenciamento de
+                                    dados.
+                                </p>
+                                <div class="flex">
+                                    <a class="btn" href="https://github.com/HevelinFR/sumer" target="_blank">Código</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. To-do List -->
+                        <div class="card-container">
+                            <div class="card-text">
+                                <h3>To-do List </h3>
+                                <p>
+                                    Aplicação para gerenciamento de tarefas desenvolvida em Vue.js, com foco em
+                                    interação e manipulação de estado.
+                                </p>
+                                <div class="flex">
+                                    <a class="btn" href="https://to-do-list-beta-teal.vercel.app/To-do-list/parte5.html"
+                                        target="_blank">Website</a>
+                                    <a class="btn" href="https://github.com/HevelinFR/to-do-list"
+                                        target="_blank">Código</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Curso -->
                         <div class="card-container">
                             <div class="card-text">
                                 <h3>Bikcraft</h3>
-                                Site desenvolvido no curso de Web Design na Origamid
+                                <p>
+                                    Projeto desenvolvido durante curso de Web Design, com foco em estruturação de
+                                    layouts utilizando HTML e CSS.
+                                </p>
                                 <div class="flex">
-                                    <a class="btn pink" href="https://github.com/HevelinFR/Projeto-curso-de-Web-Design-da-origamid" target="_blank"><button>Código</button></a>
+                                    <a class="btn"
+                                        href="https://github.com/HevelinFR/Projeto-curso-de-Web-Design-da-origamid"
+                                        target="_blank">Código</a>
                                 </div>
                             </div>
-                            <!--div card-text-->
-
-                        </div>
-                        <!--div card-container-->
-
-                        <div class="card-container">
-
-                            <div class="card-text">
-                                <h3>Sistema de Cadastro de clientes</h3>
-                                <p>Projeto pessoal criado com objetivo de praticar a linguagem PHP e banco de dados Mysql.</p>
-                                <div class="flex">
-                                    <a class="btn pink" href="https://github.com/HevelinFR/CRUD-cadastro-de-clientes" target="_blank"><button>Código</button></a>
-                                </div>
-                            </div>
-                            <!--div card-text-->
-
-                        </div>
-                        <!--div card-container-->
-
-                        <div class="card-container">
-
-                            <div class="card-text">
-                                <h3>Summer</h3>
-                                <p>Projeto de conclusão da disciplina de linguagem de programação. Summer é um sistema de gerenciamento de biblioteca desenvolvido em Python3.</p>
-                                <div class="flex">
-                                    <a class="btn pink" href="https://github.com/HevelinFR/sumer" target="_blank"><button>Código</button></a>
-                                </div>
-                            </div>
-                            <!--div card-text-->
-
-                        </div>
-                        <!--div card-container-->
-                    
-
-                        <div class="card-container">
-
-                            <div class="card-text">
-                                <h3>Techno</h3>
-                                <p>Loja virtual feita com Vue.js no curso da Origamid</p>
-                                <div class="flex">
-                                    <a class="btn pink" href="https://techno.vercel.app/" target="_blank"><button>website</button></a>
-                                    <a class="btn pink" href="https://github.com/HevelinFR/Techno" target="_blank"><button>Código</button></a>
-                                </div>
-                            </div>
-                            <!--div card-text-->
-
                         </div>
 
-                        <div class="card-container">
-                            <div class="card-text">
-                                <h3>To-do list</h3>
-                                <p>Adicione suas tarefas e se orgnize melhor. Feito em vue.js</p>
-                                <div class="flex">
-                                    <a class="btn pink" href="https://to-do-list-beta-teal.vercel.app/To-do-list/parte5.html" target="_blank"><button>website</button></a>
-                                    <a class="btn pink" href="https://github.com/HevelinFR/to-do-list" target="_blank"><button>Código</button></a>
-                                </div>
-                            </div>
-                            <!--div card-text-->
-                        </div>
                     </div>
-                    <!--div card-container-->
+
+                </section>
+                <!--div card-container-->
 
                 </section>
 
@@ -232,7 +305,8 @@
             <footer class="footer" id="contato">
                 <div class="contato">
                     <p> hevelinfreitas21@gmail.com</p>
-                    <p><a href=""><i class="fab fa-github"></i></a> <a href=""><i class="fab fa-linkedin"></i></a> <a href=""><i class="fab fa-instagram"></i></a></p>
+                    <p><a href=""><i class="fab fa-github"></i></a> <a href=""><i class="fab fa-linkedin"></i></a> <a
+                            href=""><i class="fab fa-instagram"></i></a></p>
                     © Copyright Hevelin Freitas 2022
                 </div>
             </footer>
@@ -243,29 +317,29 @@
 </body>
 <script>
     const { createApp } = Vue
-  
+
     createApp({
-      data() {
-        return {
-            dark: true,
-            showMenu: false,
-            descricao: "Passe o cursor do mouse no card e saiba mais!",
-            message: {
-                "js": "JavaScript é uma linguagem leve, interpretada e baseada em objetos com funções de primeira classe, mais conhecida como a linguagem de script para páginas Web.",
-                "html":"HTML (Linguagem de Marcação de HiperTexto) é o bloco de construção mais básico da web. Define o significado e a estrutura do conteúdo da web.",
-                "css":"CSS é a linguagem que usamos para estilizar um documento HTML.",
-                "php":"PHP é uma linguagem de programação de ampla utilização, interpretada, que é especialmente interessante para desenvolvimento para a web e pode ser mesclada dentro do código HTML. A sintaxe da linguagem lembra C, Java e Perl, e é fácil de aprender. O objetivo principal da linguagem é permitir a desenvolvedores escreverem páginas que serão geradas dinamicamente rapidamente, mas você pode fazer muito mais do que isso com PHP.",
-                "laravel":"O Laravel é um framework de desenvolvimento ágil para PHP.",
-                "vue":"Vue é um framework JavaScript para construir interfaces de usuário. Ele se baseia em HTML, CSS e JavaScript padrão e fornece um modelo de programação declarativo e baseado em componentes que ajuda você a desenvolver interfaces de usuário com eficiência, sejam elas simples ou complexas."
+        data() {
+            return {
+                dark: false,
+                showMenu: false,
+                descricao: "Passe o cursor do mouse no card e saiba mais!",
+                message: {
+                    "js": "JavaScript é uma linguagem leve, interpretada e baseada em objetos com funções de primeira classe, mais conhecida como a linguagem de script para páginas Web.",
+                    "html": "HTML (Linguagem de Marcação de HiperTexto) é o bloco de construção mais básico da web. Define o significado e a estrutura do conteúdo da web.",
+                    "css": "CSS é a linguagem que usamos para estilizar um documento HTML.",
+                    "php": "PHP é uma linguagem de programação de ampla utilização, interpretada, que é especialmente interessante para desenvolvimento para a web e pode ser mesclada dentro do código HTML. A sintaxe da linguagem lembra C, Java e Perl, e é fácil de aprender. O objetivo principal da linguagem é permitir a desenvolvedores escreverem páginas que serão geradas dinamicamente rapidamente, mas você pode fazer muito mais do que isso com PHP.",
+                    "laravel": "O Laravel é um framework de desenvolvimento ágil para PHP.",
+                    "vue": "Vue é um framework JavaScript para construir interfaces de usuário. Ele se baseia em HTML, CSS e JavaScript padrão e fornece um modelo de programação declarativo e baseado em componentes que ajuda você a desenvolver interfaces de usuário com eficiência, sejam elas simples ou complexas."
+                }
+            }
+        },
+        methods: {
+            mouseleave: function () {
+                this.descricao = 'Passe o cursor do mouse no card e saiba mais!'
             }
         }
-      },
-      methods: {
-        mouseleave: function(){
-        this.descricao = 'Passe o cursor do mouse no card e saiba mais!'
-        }
-    }
     }).mount('#app')
-  </script>
+</script>
 
 </html>
